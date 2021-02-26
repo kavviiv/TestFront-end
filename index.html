@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/firestore.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <ul>
+                <div class="left">
+                    <img src="img/logo.png"></img>
+                    <h1>management</h1>
+                </div>
+                <li><a>About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <div class="wrapper">
+            <div class="sidebar">
+                <img src="img/logo.png"></img>
+                <h2>management</h2>
+                <ul>
+                    <li class="active"><a href="/index.html"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-level-up"></i>รายรับ</a></li>
+                    <li><a href="#"><i class="fas fa-project-diagram"></i>รายจ่าย</a></li>
+                    <li><a href="/bill.html"><i class="fas fa-money-bil"></i>จัดการบิล</a></li>
+                    <li><a href="#"><i class="fas fa-mail-bulk"></i>Mail Box</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <section>
+        <div class="box">
+            <h2>Hi!,<span style="color:rgb(194, 10, 201)"> Lina Li</span></h2>
+            <h1>Have a nice day at work</h1>
+        </div>
+
+        <div class="work">
+            <h1>My Work</h1>
+            <div class="row">
+                <div class="column">
+                    <div class="card" onclick="openForm()">
+                        <a id="show"></a>
+                        <img src="/img/bill.png"></img>
+                        <h2>Add Bill</h2>
+                        <a>เพิ่มบิล</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card1" onclick="openForm()">
+                        <a id="show"></a>
+                        <img src="/img/bill.png"></img>
+                        <h2>Add Bill</h2>
+                        <a>เพิ่มบิล</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card2" onclick="openForm()">
+                        <a id="show"></a>
+                        <img src="/img/bill.png"></img>
+                        <h2>Add Bill</h2>
+                        <a>เพิ่มบิล</a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card_a">
+                        <img src="/img/add.png"></img>
+                        <h2></h2>
+                        <a></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="total">
+            <h1> Total <span style="color:rgb(106, 106, 107)" id="date"></span></h1>
+            <div class="row">
+                <div class="column">
+                    <div class="income">
+                        <a>รายได้</a>
+                        <h2>฿ 123,456.-</h2>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="income">
+                        <a>รายจ่าย</a>
+                        <h2>฿ 12,345.-</h2>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="weekly_calendar">
+                    </div>
+                </div>
+            </div>
+            <div class="total_box">
+                <h1>ยอดคงเหลือสุทธิ (Net balance)</h1>
+                <h2>฿ 123,456.-</h2>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="box">
+                    <label for="dropdown">สถานะการอนุมัติ: </label>
+                    <select name="dropdown" id="dropdown1">
+                        <option value="อนุมัติแล้ว">อนุมัติแล้ว</option>
+                        <option value="ไม่ผ่านการอนุมัติ">ไม่ผ่านการอนุมัติ</option>
+                        <option value="รอการอนุมัติ">รอการอนุมัติ</option>
+                    </select><br>
+                    <label for="bnum">เลขที่บิล: </label><input type="text" id="bnum" name="bnum"
+                        placeholder="เลขที่บิล">
+                    <label for="bnum">รายการ: </label><input type="text" id="list" name="list" placeholder="รายการ">
+                    <label for="bnum">หมวดหมู่: </label>
+                    <select name="dropdown" id="dropdown2">
+                        <option value="Device & Accessories">Device & Accessories</option>
+                        <option value="SIMCARD">SIMCARD</option>
+                    </select><br>
+                    <label for="bnum">ประเภท: </label>
+                    <select name="dropdown" id="dropdown3">
+                        <option value="yes">Computer</option>
+                        <option value="no">etc</option>
+                    </select><br>
+                    <label for="bnum">จำนวน: </label><input type="text" id="quantity" name="quantity"
+                        placeholder="จำนวน">
+                    <label for="bnum">ราคา: </label><input type="text" id="price" name="price" placeholder="ราคา">
+                    <button class="btn save"  onclick="addData()">บันทึก</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+        const d = new Date();
+        y = d.getFullYear();
+        day = d.getDate();
+        document.getElementById("date").innerHTML = "  " + day + " " + monthNames[d.getMonth()] + ", " + y;;
+    </script>
+</body>
+
+</html>

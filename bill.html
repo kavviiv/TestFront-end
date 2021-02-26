@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/bill.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="js/firestore.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <ul>
+                <div class="left">
+                    <img src="img/logo.png"></img>
+                    <h1>management</h1>
+                </div>
+                <li><a>About</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <aside>
+        <div class="wrapper">
+            <div class="sidebar">
+                <img src="img/logo.png"></img>
+                <h2>management</h2>
+                <ul>
+                    <li><a href="/index.html"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="><i class=" fas fa-chart-line"></i>Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-level-up"></i>รายรับ</a></li>
+                    <li><a href="#"><i class="fas fa-project-diagram"></i>รายจ่าย</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-money-bil"></i>จัดการบิล</a></li>
+                    <li><a href="#"><i class="fas fa-mail-bulk"></i>Mail Box</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <section>
+         <div class="total_box">
+            
+        </div>
+        <div class="container">
+            <h1 id="bigTextEvaluationStudents">รายการบิลทั้งหมด</h1>
+            <table id="tbl_account_list" border="0" cellpadding="110" style="border-collapse:collapse;">
+                <thead>
+                    <th>การอนุมัติ</th>
+                    <th>ลำดับ</th>
+                    <th>เลขที่บิล</th>
+                    <th>รายการ</th>
+                    <th>หมวดหมู่</th>
+                    <th>ประเภท</th>
+                    <th>จำนวน(ชิ้น)</th>
+                    <th>ราคา/ชิ้น</th>
+                    <th>ราคารวม</th>
+                    <th>วันหมดอายุ</th>
+                    <th>จัดการ</th>
+                    <th>หมายเหตุ</th>
+                </thead>
+               
+            </table>
+            
+        </div>
+    </section>
+</body>
+
+</html>
