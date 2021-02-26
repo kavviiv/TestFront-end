@@ -8,16 +8,13 @@
 }
 
 body {
-  background-image: url(/img/sharp.svg);
-
-  background: #fae7eb;
+  background-image: url(/img/sharp.svg),
+    linear-gradient(to right, #fae7eb, rgb(255, 255, 255));
+  background-repeat: no-repeat;
 }
 
 .nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  overflow: auto;
   border-bottom: 1px solid #918c8c;
   background: transparent;
 }
@@ -30,9 +27,15 @@ body {
 .nav ul li left {
   float: left;
 }
+.nav ul .right img {
+  float: right;
+  margin-bottom: 10px;
+}
 
 .nav ul li a {
-  float: right;
+  margin-left: 10px;
+  margin-top: 25px;
+  float: left;
 }
 .nav ul h1 {
   margin-top: 15px;
@@ -98,7 +101,7 @@ body {
 }
 
 @media screen and (max-width: 720px) {
-  .wrapper .sidebar{
+  .wrapper .sidebar {
     min-width: auto;
   }
 }
@@ -124,7 +127,6 @@ table {
 
 td {
   border: none;
-  
 }
 th {
   text-align: center;
@@ -173,3 +175,64 @@ section .work h1 {
   color: #000;
 }
 
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 36px;
+  margin-left: 0;
+}
+
+#main {
+  transition: margin-right 0.5s;
+  padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+.avatar {
+  vertical-align: middle;
+  width: 150px;
+  height: 70px;
+  border-radius: 50%;
+}
+.avar {
+  vertical-align: middle;
+  width: 500px;
+  height: 70px;
+  border-radius: 50%;
+}

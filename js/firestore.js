@@ -52,6 +52,8 @@ function renderAccount(doc) {
   td_manage.textContent = doc.data().manage;
   td_note.textContent = doc.data().note;
 
+
+
   tr.appendChild(td_approve_status);
   tr.appendChild(td_order);
   tr.appendChild(td_bill_number);
@@ -66,7 +68,7 @@ function renderAccount(doc) {
   tr.appendChild(td_note);
 
   document.getElementById("tbl_account_list").appendChild(tr);
-  if (doc.data().approve_status == "ไม่อนุมัติ") {
+  if (doc.data().approve_status == "ไม่ผ่านการอนุมัติ") {
     tr.style = "color:red";
   }
 
@@ -75,6 +77,7 @@ function renderAccount(doc) {
   }
 }
 
+
 function addData() {
   var bill_status = document.getElementById("dropdown1");
   var b_status = bill_status.options[bill_status.selectedIndex].text;
@@ -82,24 +85,23 @@ function addData() {
   var select_cate = cate.options[cate.selectedIndex].text;
   var tp = document.getElementById("dropdown3");
   var select_tp = tp.options[tp.selectedIndex].text;
-
   var q = document.getElementById("quantity").value;
   var p = document.getElementById("price").value;
-
   var total = q * p;
-
-  db.collection("Bill")
-    .add({
-      approve_status: b_status,
-      order: "11",
-      bill_number: document.getElementById("bnum").value,
-      list: document.getElementById("list").value,
-      category: select_cate,
-      type: select_tp,
-      quantity: document.getElementById("quantity").value,
-      price_piece: document.getElementById("price").value,
-      total_price: total,
-    })
-    .then(alert("เพิ่มข้อมูลแล้ว"));
-  document.getElementById("myModal").style.display = "none";
+  
+    db.collection("Bill")
+      .add({
+        approve_status: b_status,
+        order: document.getElementById("order").value,
+        bill_number: document.getElementById("bnum").value,
+        list: document.getElementById("list").value,
+        category: select_cate,
+        type: select_tp,
+        quantity: document.getElementById("quantity").value,
+        price_piece: document.getElementById("price").value,
+        total_price: total,
+      })
+      .then(alert("เพิ่มข้อมูลแล้ว"));
+    document.getElementById("myModal").style.display = "none";
+  
 }

@@ -1,3 +1,4 @@
+<!-- Reference w3schools -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,10 +24,19 @@
         <nav class="nav">
             <ul>
                 <div class="left">
-                    <img src="img/logo.png"></img>
-                    <h1>management</h1>
+                    <img src="img/logo.png"></img><a>management</a>
                 </div>
-                <li><a>About</a></li>
+                <div class="right">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" class="avatar" onclick="openNav()">
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a><img src="https://www.w3schools.com/howto/img_avatar.png" class="avar"></img></a><br>
+                        <a></a>
+                        <a></a>
+                        <a></a>
+                    </div>
+                </div>
+
             </ul>
         </nav>
     </header>
@@ -124,6 +134,7 @@
                         <option value="ไม่ผ่านการอนุมัติ">ไม่ผ่านการอนุมัติ</option>
                         <option value="รอการอนุมัติ">รอการอนุมัติ</option>
                     </select><br>
+                    <label for="bnum">ลำดับ: </label><input type="text" id="order" name="order" placeholder="ลำดับ">
                     <label for="bnum">เลขที่บิล: </label><input type="text" id="bnum" name="bnum"
                         placeholder="เลขที่บิล">
                     <label for="bnum">รายการ: </label><input type="text" id="list" name="list" placeholder="รายการ">
@@ -140,7 +151,7 @@
                     <label for="bnum">จำนวน: </label><input type="text" id="quantity" name="quantity"
                         placeholder="จำนวน">
                     <label for="bnum">ราคา: </label><input type="text" id="price" name="price" placeholder="ราคา">
-                    <button class="btn save"  onclick="addData()">บันทึก</button>
+                    <button class="button" onclick="addData()">บันทึก</button>
                 </div>
             </div>
         </div>
