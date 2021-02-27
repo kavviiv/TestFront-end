@@ -8,8 +8,7 @@
 }
 
 body {
-  background-image: url(/img/sharp.svg),
-    linear-gradient(to right, #fae7eb, rgb(255, 255, 255));
+  background-image: url(/img/sharp.svg),linear-gradient(to right, #FAE7EB, rgb(255, 255, 255));
   background-repeat: no-repeat;
 }
 
@@ -24,15 +23,16 @@ body {
   width: 4%;
   margin-left: 50px;
 }
-.nav ul li left {
+.nav ul left {
   float: left;
 }
+
 .nav ul .right img {
   float: right;
   margin-bottom: 10px;
 }
 
-.nav ul li a {
+.nav ul a {
   margin-left: 10px;
   margin-top: 25px;
   float: left;
@@ -105,14 +105,21 @@ body {
     min-width: auto;
   }
 }
-section .total_box {
+section .calendar {
   margin-top: 1%;
-  width: 890px;
+  width: 850px;
   border-radius: 25px;
   background: white;
   padding: 80px;
   text-align: center;
 }
+
+section .calendar .month {
+  position: fixed;
+  float: left;
+  margin-top: 0;
+}
+
 table {
   margin-top: 150px;
   border-collapse: collapse;
@@ -174,7 +181,6 @@ section .work {
 section .work h1 {
   color: #000;
 }
-
 
 .sidenav {
   height: 100%;
